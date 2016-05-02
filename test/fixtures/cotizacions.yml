@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 1
+  fecha_acotizacion: 2016-05-02
+  fecha_tcotizacion: 2016-05-02
+  descuento: 1
+  descripcion: MyText
+
+two:
+  cliente_id: 1
+  fecha_acotizacion: 2016-05-02
+  fecha_tcotizacion: 2016-05-02
+  descuento: 1
+  descripcion: MyText
