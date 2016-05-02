@@ -6,7 +6,7 @@ class CreateArticulos < ActiveRecord::Migration
       t.integer :stock
       t.integer :precio_compra
       t.integer :precio_venta
-      t.image :imagen
+      t.string :imagen 
 
       t.timestamps null: false
     end

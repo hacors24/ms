@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502171453) do
+ActiveRecord::Schema.define(version: 20160502173145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articulos", force: :cascade do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "stock"
+    t.integer  "precio_compra"
+    t.integer  "precio_venta"
+    t.string   "imagen"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nombres"
@@ -41,6 +52,15 @@ ActiveRecord::Schema.define(version: 20160502171453) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "detalle_pedidos", force: :cascade do |t|
+    t.integer  "pedido_id"
+    t.integer  "articulo_id"
+    t.integer  "cantidad"
+    t.integer  "precio_unitario"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "pedidos", force: :cascade do |t|
     t.integer  "cliente_id"
     t.date     "fecha_pedido"
@@ -49,6 +69,15 @@ ActiveRecord::Schema.define(version: 20160502171453) do
     t.text     "descripcion"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "venta", force: :cascade do |t|
+    t.integer  "cliente_id"
+    t.date     "fecha_venta"
+    t.string   "tipo_documento"
+    t.text     "descripcion"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_foreign_key "pedidos", "clientes"
