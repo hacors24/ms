@@ -1,6 +1,6 @@
 class CreateDetalleVenta < ActiveRecord::Migration
   def change
-    create_table :detalle_venta do |t|
+    create_table :detalle_ventas do |t|
       t.integer :venta_id
       t.integer :articulo_id
       t.integer :cantidad

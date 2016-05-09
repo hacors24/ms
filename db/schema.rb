@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "cotizacions", force: :cascade do |t|
+  create_table "cotizaciones", force: :cascade do |t|
     t.integer  "cliente_id"
     t.date     "fecha_acotizacion"
     t.date     "fecha_tcotizacion"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "detalle_venta", force: :cascade do |t|
+  create_table "detalle_ventas", force: :cascade do |t|
     t.integer  "venta_id"
     t.integer  "articulo_id"
     t.integer  "cantidad"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "venta", force: :cascade do |t|
+  create_table "ventas", force: :cascade do |t|
     t.integer  "cliente_id"
     t.date     "fecha_venta"
     t.string   "tipo_documento"

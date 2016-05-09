@@ -42,7 +42,7 @@ class CotizacionesController < ApplicationController
 	end
 
 	def destroy
-		@cotizacio.destroy
+		@cotizacion.destroy
 		respond_to do |format|
 			format.html{redirect_to cotizaciones_url, notice: 'Eliminada Cotizacion con exito'}
 		end
@@ -55,7 +55,7 @@ class CotizacionesController < ApplicationController
 
 	private
 
-	def set_cliente
+	def set_cotizacion
 		@cotizacion = Cotizacion.find(params[:id])
 	end
 

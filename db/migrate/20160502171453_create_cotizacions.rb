@@ -1,6 +1,6 @@
 class CreateCotizacions < ActiveRecord::Migration
   def change
-    create_table :cotizacions do |t|
+    create_table :cotizaciones do |t|
       t.integer :cliente_id
       t.date :fecha_acotizacion
       t.date :fecha_tcotizacion

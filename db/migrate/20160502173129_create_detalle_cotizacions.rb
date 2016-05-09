@@ -1,6 +1,6 @@
 class CreateDetalleCotizacions < ActiveRecord::Migration
   def change
-    create_table :detalle_cotizacions do |t|
+    create_table :detalle_cotizaciones do |t|
       t.integer :cotizacion_id
       t.integer :articulo_id
       t.integer :cantidad
