@@ -1,0 +1,2 @@
+module DetalleVentasHelper
+end
