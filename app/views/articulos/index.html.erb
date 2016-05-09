@@ -1,0 +1,27 @@
+<table>
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Stock</th>
+			<th>Precio compra</th>
+			<th>Precio Venta</th>
+			<th>Mostrar</th>
+			<th>editar</th>
+			<th>eliminar</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @articulos.each do |articulo| %>
+			<tr>
+				<td><%= articulo.nombre %></td>
+				<td><%= articulo.stock %></td>
+				<td><%= articulo.precio_compra %></td>
+				<td><%= articulo.precio_venta %></td>
+				<td><%= link_to 'Mostar', articulo %></td>
+				<td><%= link_to 'EDITAR', edit_articulo_path(articulo) %></td>
+				<td><%= link_to 'eliminar', articulo, method: :delete, data:{confirm:'seguro choro naco'} %></td>
+
+			</tr>
+		<%end%>
+	</tbody>
+</table>
