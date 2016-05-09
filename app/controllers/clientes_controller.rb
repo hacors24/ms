@@ -30,7 +30,7 @@ before_action :set_articulo ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def create
-		@articulo = Cliente.create(cliente_params)
+		@cliente = Cliente.create(cliente_params)
 		respond_to do |format|
 			if @cliente.save
 				format.html{redirect_to @cliente, notice: 'Agregado Cliente con exito'}
