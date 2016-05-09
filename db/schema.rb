@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160502173145) do
-=======
 ActiveRecord::Schema.define(version: 20160502173541) do
->>>>>>> 436f019d3f671ad924cc48c2972c9717177ce100
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +42,6 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.datetime "updated_at",    null: false
   end
 
-<<<<<<< HEAD
   create_table "cotizacions", force: :cascade do |t|
     t.integer  "cliente_id"
     t.date     "fecha_acotizacion"
@@ -55,7 +50,8 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.text     "descripcion"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-=======
+  end
+
   create_table "detalle_cotizacions", force: :cascade do |t|
     t.integer  "cotizacion_id"
     t.integer  "articulo_id"
@@ -63,7 +59,6 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.integer  "precio_unitario"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
->>>>>>> 436f019d3f671ad924cc48c2972c9717177ce100
   end
 
   create_table "detalle_pedidos", force: :cascade do |t|
