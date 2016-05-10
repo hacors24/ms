@@ -1,0 +1,48 @@
+<div class="panel panel-primary"><h3><%= @cliente.nombres %></h3></div>
+
+<% if notice.nil?%>
+    <p id="notice"><%= notice %></p>
+<% else %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% end %>
+
+<p>
+  <strong>Nombres: </strong>
+  <%= @cliente.nombres.to_s %>
+</p>
+<p>
+  <strong>Apellidos: </strong>
+  <%= @cliente.apellidos.to_s %>
+</p>
+<p>
+  <strong>Fecha nacimiento: </strong>
+  <%= @articulo.fecha_nac.to_s %>
+</p>
+<p>
+  <strong>Razon social: </strong>
+  <%= @articulo.razon_social.to_s %>
+</p>
+<p>
+  <strong>Domicilio: </strong>
+  <%= @cliente.domicilio.to_s %>
+</p>
+<p>
+  <strong>Telefono Fijo: </strong>
+  <%= @cliente.telefono_fijo.to_s %>
+</p>
+<p>
+  <strong>Celular: </strong>
+  <%= @cliente.celular.to_s %>
+</p>
+<p>
+  <strong>Email: </strong>
+  <%= @cliente.email.to_s %>
+</p>
+<p>
+  <strong>Sitio Web: </strong>
+  <%= @cliente.sitio_web.to_s %>
+</p>
+<p>
+  <strong>Comentario: </strong>
+  <%= @cliente.comentario.to_s %>
+</p>

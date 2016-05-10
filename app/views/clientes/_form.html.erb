@@ -1,0 +1,57 @@
+<%=  form_for(@cliente) do |f| %>
+    <% if @cliente.errors.any? %>
+        <div id="error_explanation"> </div>
+        <h2><%= pluralize(@cliente.errors.count, "error") %> Prohibido guardar este Cliente:</h2>
+
+        <ul>
+          <% @Cliente.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :nombres %>
+      <%= f.text_field :nombres %>
+    </div>
+    <div class="field">
+      <%= f.label :apellidos %>
+      <%= f.text_field :apellidos %>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_nac %>
+      <%= f.text_field :fecha_nac %>
+    </div>
+    <div class="field">
+      <%= f.label :razon_social %>
+      <%= f.text_field :razon_social %>
+    </div>
+    <div class="field">
+      <%= f.label :domicilio %>
+      <%= f.text_area :domicilio %>
+    </div>
+    <div class="field">
+      <%= f.label :telefono_fijo %>
+      <%= f.text_area :telefono_fijo %>
+    </div>
+    <div class="field">
+      <%= f.label :celular %>
+      <%= f.text_area :celular %>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_area :email %>
+    </div>
+    <div class="field">
+      <%= f.label :sitio_web %>
+      <%= f.text_area :sitio_web %>
+    </div>
+    <div class="field">
+      <%= f.label :comentario %>
+      <%= f.text_area :comentario %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
