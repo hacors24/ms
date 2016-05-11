@@ -1,7 +1,7 @@
 class VentasController < ApplicationController
 
 
-before_action :set_ventas ,only:[:show, :edit,:update, :destroy]
+before_action :set_venta ,only:[:show, :edit,:update, :destroy]
 
 
 	def index

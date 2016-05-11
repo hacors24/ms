@@ -1,0 +1,25 @@
+<div class="panel panel-primary"><h3><%= @venta.cliente_id %></h3></div>
+
+<% if notice.nil?%>
+    <p id="notice"><%= notice %></p>
+<% else %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% end %>
+
+<p>
+  <strong>Cliente ID: </strong>
+  <%= @venta.cliente_id.to_s %>
+</p>
+<p>
+  <strong>Fecha Venta: </strong>
+  <%= @venta.fecha_venta.to_s %>
+</p>
+<p>
+  <strong>Precio Tipo Documento: </strong>
+  <%= @venta.tipo_documento.to_s %>
+</p>
+<p>
+  <strong>Descripción: </strong>
+  <%= @venta.descripcion.to_s %>
+</p>
+

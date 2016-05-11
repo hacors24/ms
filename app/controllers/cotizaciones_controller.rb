@@ -1,6 +1,6 @@
 class CotizacionesController < ApplicationController
 
- before_action :set_articulo ,only:[:show, :edit,:update, :destroy]
+ before_action :set_cotizacion ,only:[:show, :edit,:update, :destroy]
 
 
 	def index

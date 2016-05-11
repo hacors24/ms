@@ -1,0 +1,37 @@
+<%=  form_for(@cotizacion) do |f| %>
+    <% if @cotizacion.errors.any? %>
+        <div id="error_explanation"> </div>
+        <h2><%= pluralize(@cotizacion.errors.count, "error") %> Prohibido guardar esta cotizacion:</h2>
+
+        <ul>
+          <% @cotizacion.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :cliente_id%>
+      <%= f.text_field :cliente_id%>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_acotizacion%>
+      <%= f.text_field :fecha_acotizacion%>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_tcotizacion%>
+      <%= f.text_field :fecha_tcotizacion %>
+    </div>
+    <div class="field">
+      <%= f.label :descuento%>
+      <%= f.text_field :descuento%>
+    </div>
+    <div class="field">
+      <%= f.label :descripcion %>
+      <%= f.text_area :descripcion %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

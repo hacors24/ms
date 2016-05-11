@@ -1,0 +1,36 @@
+<div class="panel panel-primary"><h3><%= @pedido.cliente_id %></h3></div>
+
+<% if notice.nil?%>
+    <p id="notice"><%= notice %></p>
+<% else %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% end %>
+
+<p>
+  <strong>Cliente_id: </strong>
+  <%= @pedido.cliente_id.to_s %>
+</p>
+<p>
+  <strong>Fecha_pedido: </strong>
+  <%= @pedido.fecha_pedido.to_s %>
+</p>
+<p>
+  <strong>Fecha_entrega: </strong>
+  <%= @pedido.fecha_entrega.to_s %>
+</p>
+<p>
+  <strong>Fecha_entrega: </strong>
+  <%= @pedido.fecha_entrega.to_s %>
+</p>
+<p>
+  <strong>Estado: </strong>
+  <%= @pedido.estado.to_s %>
+</p>
+<p>
+  <strong>Descripcion: </strong>
+  <%= @pedido.descripcion.to_s %>
+</p>
+
+
+
+    

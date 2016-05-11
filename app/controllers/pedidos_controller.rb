@@ -1,6 +1,6 @@
 class PedidosController < ApplicationControllerrails 
 
-before_action :set_pedidos ,only:[:show, :edit,:update, :destroy]
+before_action :set_pedido ,only:[:show, :edit,:update, :destroy]
 
 
 	def index

@@ -1,0 +1,37 @@
+<%=  form_for(@pedido) do |f| %>
+    <% if @pedido.errors.any? %>
+        <div id="error_explanation"> </div>
+        <h2><%= pluralize(@pedido.errors.count, "error") %> Prohibido guardar este pedido:</h2>
+
+        <ul>
+          <% @pedido.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :cliente_id %>
+      <%= f.text_field :cliente_id %>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_pedido %>
+      <%= f.text_field :fecha_pedido %>
+    </div>
+    <div class="field">
+      <%= f.label :fecha_entrega %>
+      <%= f.text_field :fecha_entrega %>
+    </div>
+    <div class="field">
+      <%= f.label :estado %>
+      <%= f.text_field :estado %>
+    </div>
+    <div class="field">
+      <%= f.label :descripcion %>
+      <%= f.text_area :descripcion %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
