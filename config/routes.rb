@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources 'articulos'
   resources 'clientes'
   resources 'cotizacions' , :path => "cotizaciones"
-  resources 'ventas'
   resources 'pedidos'
+  resources 'ventas'
 
 
 
