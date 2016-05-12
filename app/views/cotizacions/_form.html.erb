@@ -13,19 +13,19 @@
 
     <div class="field">
       <%= f.label :cliente_id%>
-      <%= f.text_field :cliente_id%>
+      <%= f.select('cliente_id', Cliente.all.collect{|c| [c.nombres, c.id]}) %>
     </div>
     <div class="field">
       <%= f.label :fecha_acotizacion%>
-      <%= f.text_field :fecha_acotizacion%>
+      <%= f.date_select :fecha_acotizacion%>
     </div>
     <div class="field">
       <%= f.label :fecha_tcotizacion%>
-      <%= f.text_field :fecha_tcotizacion %>
+      <%= f.date_select :fecha_tcotizacion %>
     </div>
     <div class="field">
       <%= f.label :descuento%>
-      <%= f.text_field :descuento%>
+      <%= f.text_area :descuento%>
     </div>
     <div class="field">
       <%= f.label :descripcion %>

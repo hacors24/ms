@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources 'articulos'
   resources 'clientes'
-  resources 'cotizaciones'
+  resources 'cotizacions' , :path => "cotizaciones"
   resources 'ventas'
   resources 'pedidos'
-  
-  
+
 
 
 
