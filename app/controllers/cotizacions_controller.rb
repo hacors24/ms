@@ -43,7 +43,7 @@ class CotizacionsController < ApplicationController
   def destroy
     @cotizacion.destroy
     respond_to do |format|
-      format.html{redirect_to cotizaciones_url, notice: 'Eliminada Cotizacion con exito'}
+      format.html{redirect_to cotizacions_url, notice: 'Eliminada Cotizacion con exito'}
     end
   end
 
