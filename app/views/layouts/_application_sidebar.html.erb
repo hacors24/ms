@@ -25,14 +25,13 @@
     <%= nav_link root_path do %>
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     <% end %>
-    <%= treeview_link 'Lots of links here' do %>
+    <%= treeview_link 'Menu' do %>
       <%= nav_link "#" do %>
         <i class="fa fa-angle-double-right"></i>
-        One Way
-      <% end %>
-      <%= nav_link "#" do %>
-        <i class="fa fa-angle-double-right"></i>
-        Another
+        <%= link_to 'Articulos', controller: 'articulos' %>
+        <%= link_to 'Ventas', controller: 'ventas' %>
+        <%= link_to 'Cotizaciones', controller: 'cotizacions' %>
+        <%= link_to 'Pedidos', controller: 'pedidos' %>
       <% end %>
     <% end %>
   </ul>
