@@ -4,7 +4,7 @@ before_action :set_detalle_pedidos ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_pedidos= Detalle_Pedidos.all
+		@detalle_pedidos= Detalle_Pedido.all
 	end
 
 

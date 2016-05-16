@@ -3,7 +3,7 @@ before_action :set_detalle_ventas ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_ventas= Detalle_Ventas.all
+		@detalle_ventas= Detalle_Venta.all
 	end
 
 
