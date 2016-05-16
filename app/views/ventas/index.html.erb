@@ -19,7 +19,7 @@
   <tbody>
   <% @ventas.each do |venta|%>
       <tr>
-        <td><%=venta.cliente.nombres %></td>
+        <td><%=venta.id %></td>
         <td><%= venta.fecha_venta %> </td>
         <td> <%=venta.tipo_documento %> </td>
         <td> <%= venta.descripcion %></td>
