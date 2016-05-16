@@ -15,6 +15,9 @@ class CotizacionesController < ApplicationController
 	def show 
 	end
 
+def new
+	@cotizacion= Cotizacion.new
+end
 
 
 

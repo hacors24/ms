@@ -1,10 +1,10 @@
-<%=  form_for(@pedido) do |f| %>
-    <% if @pedido.errors.any? %>
+<%=  form_for(@cotizacion) do |f| %>
+    <% if @cotizacion.errors.any? %>
         <div id="error_explanation"> </div>
-        <h2><%= pluralize(@pedido.errors.count, "error") %> Prohibido guardar este pedido:</h2>
+        <h2><%= pluralize(@cotizacion.errors.count, "error") %> Prohibido guardar esta cotizacion:</h2>
 
         <ul>
-          <% @pedido.errors.full_messages.each do |message| %>
+          <% @cotizacion.errors.full_messages.each do |message| %>
               <li><%= message %></li>
           <% end %>
         </ul>
@@ -12,20 +12,20 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :cliente_id %>
+      <%= f.label :cliente_id%>
       <%= f.select('cliente_id', Cliente.all.collect{|c| [c.nombres, c.id]}) %>
     </div>
     <div class="field">
-      <%= f.label :fecha_pedido %>
-      <%= f.date_select :fecha_pedido %>
+      <%= f.label :fecha_acotizacion%>
+      <%= f.date_select :fecha_acotizacion%>
     </div>
     <div class="field">
-      <%= f.label :fecha_entrega %>
-      <%= f.date_select :fecha_entrega %>
+      <%= f.label :fecha_tcotizacion%>
+      <%= f.date_select :fecha_tcotizacion %>
     </div>
     <div class="field">
-      <%= f.label :estado %>
-      <%= f.select :estado,[['Entregado', true], ['No entregado', false]] %>
+      <%= f.label :descuento%>
+      <%= f.text_area :descuento%>
     </div>
     <div class="field">
       <%= f.label :descripcion %>

@@ -1,4 +1,4 @@
-class PedidosController < ApplicationControllerrails 
+class PedidosController < ApplicationController
 
 before_action :set_pedido ,only:[:show, :edit,:update, :destroy]
 
