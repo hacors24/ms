@@ -16,10 +16,6 @@ before_action :set_venta ,only:[:show, :edit,:update, :destroy]
 	def show 
 	end
 
-
-
-
-
 	def update
 		respond_to do |format|
 			if @venta.update(venta_params)

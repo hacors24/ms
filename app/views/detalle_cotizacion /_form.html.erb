@@ -1,0 +1,37 @@
+<%=  form_for(@detalle_cotizacion) do |f| %>
+    <% if @detalle_cotizacion.errors.any? %>
+        <div id="error_explanation"> </div>
+        <h2><%= pluralize(@detalle_cotizacion.errors.count, "error") %> Prohibido guardar este Articulo:</h2>
+
+        <ul>
+          <% @detalle_cotizacion.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :cotizacion_id %>
+      <%= f.select('cotizacion_id', Cotizacion.all.collect{|c| [c.cliente_id, c.fecha_acotizacion, c.id]}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :articulo_id %>
+      <%= f.select('articulo_id', Articulo.all.collect{|c| [c.nombre, c.id]}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cantidad %>
+      <%= f.text_field :cantidad %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Precio_unitario %>
+      <%= f.text_field :Precio_unitario %>
+    </div>
+   
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

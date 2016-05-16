@@ -1,11 +1,11 @@
 class DetalleCotizacionesController < ApplicationController
 
 
-before_action :set_detalle_cotizaciones ,only:[:show, :edit,:update, :destroy]
+before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_cotizaciones= Detalle_Cotizaciones.all
+		@detalle_cotizaciones= Detalle_Cotizacion.all
 	end
 
 

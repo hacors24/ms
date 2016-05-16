@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'inicio/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'inicio#index'
   resources 'articulos'
   resources 'clientes'
   resources 'cotizacions' , :path => "cotizaciones"
   resources 'pedidos'
   resources 'ventas'
-
-
+  resources 'detalle_cotizaciones' , :path => "detallecotizaciones"
 
 
   # Example of regular route:

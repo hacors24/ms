@@ -1,0 +1,16 @@
+<div class="panel panel-primary"><h3><%= @detalle_cotizacion.nombres %></h3></div>
+
+<% if notice.nil?%>
+    <p id="notice"><%= notice %></p>
+<% else %>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% end %>
+
+<p>
+  <strong>Cantidad: </strong>
+  <%= @detalle_cotizacion.cantidad.to_s %>
+</p>
+<p>
+  <strong>Precio unitario: </strong>
+  <%= @detalle_cotizacion.precio_unitario.to_s %>
+</p>

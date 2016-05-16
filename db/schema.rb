@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160502173541) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "detalle_cotizacions", force: :cascade do |t|
+  create_table "detalle_cotizaciones", force: :cascade do |t|
     t.integer  "cotizacion_id"
     t.integer  "articulo_id"
     t.integer  "cantidad"
