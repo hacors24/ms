@@ -1,4 +1,4 @@
-<%=  form_for(@detalle_cotizacion) do |f| %>
+<%=   form_for @detalle_cotizacion, url: detalle_cotizaciones_path, html: { method: :post } do |f| %>
     <% if @detalle_cotizacion.errors.any? %>
         <div id="error_explanation"> </div>
         <h2><%= pluralize(@detalle_cotizacion.errors.count, "error") %> Prohibido guardar este Articulo:</h2>
@@ -28,7 +28,7 @@
 
     <div class="field">
       <%= f.label :Precio_unitario %>
-      <%= f.text_field :Precio_unitario %>
+      <%= f.text_field :precio_unitario %>
     </div>
    
     <div class="actions">

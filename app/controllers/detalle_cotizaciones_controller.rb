@@ -5,7 +5,7 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_cotizaciones= Detalle_Cotizacion.all
+		@detalle_cotizaciones= DetalleCotizacion.all
 	end
 
 
@@ -31,7 +31,7 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def create
-		@detalle_cotizacion = Detalle_Cotizacion.create(detalle_cotizacion_params)
+		@detalle_cotizacion = DetalleCotizacion.create(detalle_cotizacion_params)
 		respond_to do |format|
 			if @detalle_cotizacion.save
 				format.html{redirect_to @detalle_cotizacion, notice: 'Agregado Detalle con exito'}
@@ -50,14 +50,14 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def new
-		@detalle_cotizacion = Detalle_Cotizacion.new
+		@detalle_cotizacion = DetalleCotizacion.new
 	end
 
 
 	private
 
 	def set_detalle_cotizacion
-		@detalle_cotizacion= Detalle_Cotizacion.find(params[:id])
+		@detalle_cotizacion= DetalleCotizacion.find(params[:id])
 	end
 
 	def detalle_cotizacion_params

@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'inicio#index'
+  root 'welcome#index'
   resources 'articulos'
   resources 'clientes'
   resources 'cotizacions' , :path => "cotizaciones"
   resources 'pedidos'
   resources 'ventas'
-  resources 'detalle_cotizaciones' , :path => "detallecotizaciones"
+  resources 'detalle_cotizaciones' 
 
 
   # Example of regular route:
