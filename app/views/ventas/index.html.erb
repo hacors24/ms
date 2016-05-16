@@ -1,14 +1,15 @@
 <div class="panel panel-primary">
   <h3> Ventas</h3>
   <span class="tn btn-success btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Venta',new_venta_path %></span>
+  <%= link_to 'Volver al Menu', controller: 'welcome' %>
 </div>
 
 <table class="table">
   <thead>
   <tr>
-    <th>Cliente_id</th>
-    <th>Fecha_Venta</th>
-    <th>Tipo_Documento</th>
+    <th>Cliente</th>
+    <th>Fecha Venta</th>
+    <th>Tipo Documento</th>
     <th>Descripcion </th>
     <th>Mostrar</th>
     <th>Editar</th>

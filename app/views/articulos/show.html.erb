@@ -26,3 +26,8 @@
   <strong>Descripción: </strong>
   <%= @articulo.descripcion.to_s %>
 </p>
+<p>
+  <strong>Imagen: </strong>
+  <%= image_tag @articulo.imagen2.url(:thumb)  %>
+</p>
+<%= link_to 'Atras', articulos_path %>

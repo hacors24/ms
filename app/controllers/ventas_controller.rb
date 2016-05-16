@@ -57,7 +57,7 @@ before_action :set_venta ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def venta_params
-		params.require(:venta).permit(:cliente_id , :fecha_acotizacion,:fecha_tcotizacion,:descuento,:descripcion)
+		params.require(:venta).permit(:cliente_id ,:fecha_acotizacion,:fecha_tcotizacion,:descuento,:descripcion)
 	end
 
 
