@@ -20,7 +20,7 @@
   <tbody>
   <% @cotizaciones.each do |cotizacion|%>
       <tr>
-        <td><%=cotizacion.cliente_id %></td>
+        <td><%=cotizacion.cliente.nombres %></td>
         <td><%= cotizacion.fecha_acotizacion %> </td>
         <td> <%=cotizacion.fecha_tcotizacion %> </td>
         <td> <%= cotizacion.descuento %></td>
