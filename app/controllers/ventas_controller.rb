@@ -30,7 +30,7 @@ before_action :set_venta ,only:[:show, :edit,:update, :destroy]
 		@venta = Venta.create(venta_params)
 		respond_to do |format|
 			if @venta.save
-				format.html{redirect_to @venta, notice: 'Agregada Venta con exito'}
+				format.html{redirect_to ventas_url, notice: 'Agregada Venta con exito'}
 			else
 				format.html{render :new}
 			end
