@@ -1,9 +1,9 @@
 class DetalleVentasController < ApplicationController
-before_action :set_detalle_ventas ,only:[:show, :edit,:update, :destroy]
+before_action :set_detalle_venta ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_ventas= Detalle_Venta.all
+		@detalle_ventas= DetalleVenta.all
 	end
 
 
@@ -29,7 +29,7 @@ before_action :set_detalle_ventas ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def create
-		@detalle_venta = Detalle_Ventas.create(detalle_venta_params)
+		@detalle_venta = DetalleVentas.create(detalle_venta_params)
 		respond_to do |format|
 			if @detalle_ventas.save
 				format.html{redirect_to @detalle_venta, notice: 'Agregado Detalle con exito'}
@@ -48,14 +48,14 @@ before_action :set_detalle_ventas ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def new
-		@detalle_venta = Detalle_Venta.new
+		@detalle_venta = DetalleVenta.new
 	end
 
 
 	private
 
 	def set_detalle_venta
-		@detalle_venta= Detalle_Venta.find(params[:id])
+		@detalle_venta= DetalleVenta.find(params[:id])
 	end
 
 	def detalle_venta_params

@@ -1,0 +1,37 @@
+<%=   form_for @detalle_pedido, url: detalle_pedidos_path, html: { method: :post } do |f| %>
+    <% if @detalle_pedido.errors.any? %>
+        <div id="error_explanation"> </div>
+        <h2><%= pluralize(@detalle_pedido.errors.count, "error") %> Prohibido guardar este Articulo:</h2>
+
+        <ul>
+          <% @detalle_pedido.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :pedido_id %>
+      <%= f.select('pedido_id', Pedido.all.collect{|c| [c.cliente.nombres, c.fecha_pedido, c.id]}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :articulo_id %>
+      <%= f.select('articulo_id', Articulo.all.collect{|c| [c.nombre, c.id]}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cantidad %>
+      <%= f.text_field :cantidad %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Precio_unitario %>
+      <%= f.text_field :precio_unitario %>
+    </div>
+   
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

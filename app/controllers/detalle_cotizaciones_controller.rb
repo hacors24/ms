@@ -34,7 +34,7 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 		@detalle_cotizacion = DetalleCotizacion.create(detalle_cotizacion_params)
 		respond_to do |format|
 			if @detalle_cotizacion.save
-				format.html{redirect_to @detalle_cotizacion, notice: 'Agregado Detalle con exito'}
+				format.html{redirect_to detalle_cotizaciones_url, notice: 'Agregado Detalle con exito'}
 			else
 				format.html{render :new}
 			end
@@ -45,7 +45,7 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 	def destroy
 		@detalle_cotizacion.destroy
 		respond_to do |format|
-			format.html{redirect_to detalle_cotizacion_url, notice: 'Eliminado Detalle con exito'}
+			format.html{redirect_to detalle_cotizaciones_url, notice: 'Eliminado Detalle con exito'}
 		end
 	end
 

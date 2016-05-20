@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources 'cotizacions' , :path => "cotizaciones"
   resources 'pedidos'
   resources 'ventas'
-  resources 'detalle_cotizaciones' 
+  resources 'detalle_cotizaciones' , :path => "detallecotizaciones"
+  resources 'detalle_pedidos' , :path => "detallepedidos"
 
 
   # Example of regular route:

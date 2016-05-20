@@ -9,9 +9,9 @@
   <tr>
     <th>Cliente id</th>
     <th>Fecha cotizacion</th>
-    <th>Fecha T cotizacion</th>
+    <th>Fecha termino cotizacion</th>
     <th>Descuento</th>
-     <th>Descripcion</th>
+    <th>Descripcion</th>
     <th>Mostrar</th>
     <th>Editar</th>
     <th>Eliminar</th>
@@ -20,7 +20,7 @@
   <tbody>
   <% @cotizaciones.each do |cotizacion|%>
       <tr>
-        <td><%=cotizacion.cliente.nombres %></td>
+        <td><%=cotizacion.cliente_id%></td>
         <td><%= cotizacion.fecha_acotizacion %> </td>
         <td> <%=cotizacion.fecha_tcotizacion %> </td>
         <td> <%= cotizacion.descuento %></td>

@@ -1,4 +1,4 @@
-<div class="panel panel-primary"><h3><%= @detalle_cotizacion.id %></h3></div>
+<div class="panel panel-primary"><h3><%= @detalle_pedido.id %></h3></div>
 
 <% if notice.nil?%>
     <p id="notice"><%= notice %></p>
@@ -8,10 +8,10 @@
 
 <p>
   <strong>Cantidad: </strong>
-  <%= @detalle_cotizacion.cantidad.to_s %>
+  <%= @detalle_pedido.cantidad.to_s %>
 </p>
 <p>
   <strong>Precio unitario: </strong>
-  <%= @detalle_cotizacion.precio_unitario.to_s %>
+  <%= @detalle_pedido.precio_unitario.to_s %>
 </p>
-<%= link_to 'Atras', detalle_cotizaciones_path %>
+<%= link_to 'Atras', detalle_pedidos_path %>

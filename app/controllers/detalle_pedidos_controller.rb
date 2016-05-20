@@ -1,10 +1,10 @@
 class DetallePedidosController < ApplicationController
 
-before_action :set_detalle_pedidos ,only:[:show, :edit,:update, :destroy]
+before_action :set_detalle_pedido ,only:[:show, :edit,:update, :destroy]
 
 
 	def index
-		@detalle_pedidos= Detalle_Pedido.all
+		@detalle_pedidos= DetallePedido.all
 	end
 
 
@@ -30,7 +30,7 @@ before_action :set_detalle_pedidos ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def create
-		@detalle_pedido = Detalle_Pedido.create(detalle_pedido_params)
+		@detalle_pedido = DetallePedido.create(detalle_pedido_params)
 		respond_to do |format|
 			if @detalle_pedido.save
 				format.html{redirect_to @detalle_pedido, notice: 'Agregado Detalle con exito'}
@@ -44,19 +44,19 @@ before_action :set_detalle_pedidos ,only:[:show, :edit,:update, :destroy]
 	def destroy
 		@detalle_pedido.destroy
 		respond_to do |format|
-			format.html{redirect_to detalle_pedido_url, notice: 'Eliminado Detalle con exito'}
+			format.html{redirect_to detalle_pedidos_url, notice: 'Eliminado Detalle con exito'}
 		end
 	end
 
 	def new
-		@detalle_pedido = Detalle_Pedido.new
+		@detalle_pedido = DetallePedido.new
 	end
 
 
 	private
 
 	def set_detalle_pedido
-		@detalle_pedido= Detalle_Pedido.find(params[:id])
+		@detalle_pedido= DetallePedido.find(params[:id])
 	end
 
 	def detalle_pedido_params
