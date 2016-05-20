@@ -1,4 +1,4 @@
 class DetalleVenta < ActiveRecord::Base
-	self.table_name = 'detalles_ventas'
-	belongs_to :DetalleVentas
+	self.table_name = 'detalle_ventas'
+	belongs_to :Venta
 end

@@ -29,10 +29,10 @@ before_action :set_detalle_venta ,only:[:show, :edit,:update, :destroy]
 	end
 
 	def create
-		@detalle_venta = DetalleVentas.create(detalle_venta_params)
+		@detalle_venta = DetalleVenta.create(detalle_venta_params)
 		respond_to do |format|
-			if @detalle_ventas.save
-				format.html{redirect_to @detalle_venta, notice: 'Agregado Detalle con exito'}
+			if @detalle_venta.save
+				format.html{redirect_to detalle_ventas_url, notice: 'Agregado Detalle con exito'}
 			else
 				format.html{render :new}
 			end
@@ -43,7 +43,7 @@ before_action :set_detalle_venta ,only:[:show, :edit,:update, :destroy]
 	def destroy
 		@detalle_venta.destroy
 		respond_to do |format|
-			format.html{redirect_to detalle_venta_url, notice: 'Eliminado Detalle con exito'}
+			format.html{redirect_to detalle_ventas_url, notice: 'Eliminado Detalle con exito'}
 		end
 	end
 
