@@ -1,3 +1,7 @@
+
+<% if current_user %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
 <section class="sidebar">
   <!-- Sidebar user panel -->
   <div class="user-panel">
@@ -37,3 +41,9 @@
     <% end %>
   </ul>
 </section>
+<section class="sidebar">
+
+<% else %>
+    <%= link_to 'Login', new_user_session_path %>
+<% end %>
+
