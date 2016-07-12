@@ -4,7 +4,9 @@ class ArticulosController < ApplicationController
 
 
 	def index
-		@articulos = Articulo.all
+		#@articulos = Articulo.all 
+		@articulos = Articulo.paginate(:page => params[:page])
+		Articulo.paginate(:page => params[:page], :per_page => 3)
 	end
 
 	def edit

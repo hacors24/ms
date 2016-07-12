@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div class="panel panel-primary"> 
   <h3> Articulos</h3>
   <span class="tn btn-success btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Articulo',new_articulo_path %></span>
   <%= link_to 'Volver al Menu', controller: 'welcome' %>
@@ -31,4 +31,7 @@
       </tr>
   <%end%>
   </tbody>
+  
+ 
 </table>
+ <%= will_paginate @articulos %>
