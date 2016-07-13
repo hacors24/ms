@@ -1,6 +1,6 @@
 class DetalleVentasController < ApplicationController
 before_action :set_detalle_venta ,only:[:show, :edit,:update, :destroy]
-
+before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
 		@detalle_ventas= DetalleVenta.all

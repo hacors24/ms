@@ -1,7 +1,7 @@
 class CotizacionesController < ApplicationController
 
  before_action :set_cotizacion ,only:[:show, :edit,:update, :destroy]
-
+ before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
 		@cotizaciones = Cotizacion.all
