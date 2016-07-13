@@ -4,7 +4,7 @@ before_action :set_detalle_pedido ,only:[:show, :edit,:update, :destroy]
 before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
-		@detalle_pedidos= DetallePedido.all
+		@detalle_pedidos= DetallePedido.apaginate(:page => params[:page], :per_page =>10)
 	end
 
 

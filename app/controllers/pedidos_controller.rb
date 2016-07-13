@@ -4,7 +4,7 @@ before_action :set_pedido ,only:[:show, :edit,:update, :destroy]
 before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
-		@pedidos = Pedido.all
+		@pedidos = Pedido.paginate(:page => params[:page], :per_page =>10)
 	end
 
 

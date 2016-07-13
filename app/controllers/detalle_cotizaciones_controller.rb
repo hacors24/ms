@@ -5,7 +5,7 @@ before_action :set_detalle_cotizacion ,only:[:show, :edit,:update, :destroy]
 before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
-		@detalle_cotizaciones= DetalleCotizacion.all
+		@detalle_cotizaciones= DetalleCotizacion.paginate(:page => params[:page], :per_page =>10)
 	end
 
 

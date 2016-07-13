@@ -5,7 +5,7 @@ before_action :set_venta ,only:[:show, :edit,:update, :destroy]
 before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
-		@ventas = Venta.all
+		@ventas = Venta.paginate(:page => params[:page], :per_page =>10)
 	end
 
 

@@ -3,7 +3,7 @@ class CotizacionsController < ApplicationController
   before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
   def index
-    @cotizaciones = Cotizacion.all
+    @cotizaciones = Cotizacion.paginate(:page => params[:page], :per_page =>10)
   end
 
 

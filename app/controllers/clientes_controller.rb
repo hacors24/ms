@@ -4,7 +4,7 @@ before_action :set_cliente ,only:[:show, :edit,:update, :destroy]
 before_action :authenticate_user!, only:[:show, :index, :edit,:update, :destroy, :new, :create]
 
 	def index
-		@clientes = Cliente.all
+		@clientes = Cliente.paginate(:page => params[:page], :per_page =>10)
 	end
 
 
