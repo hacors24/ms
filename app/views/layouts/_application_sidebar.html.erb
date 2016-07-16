@@ -1,6 +1,5 @@
 
-<% if current_user %>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
 
 <section class="sidebar">
   <!-- Sidebar user panel -->
@@ -9,7 +8,7 @@
       <img src="/img/avatar3.png" class="img-circle" alt="User Image" />
     </div>
     <div class="pull-left info">
-      <p>Hello, Persona</p>
+      <p>Hola, Persona</p>
 
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
@@ -26,24 +25,36 @@
   <!-- /.search form -->
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
-    <%= nav_link root_path do %>
-      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+    <%= nav_link "#" do %>
+      <i class="fa fa-dashboard"></i> <span>Menu</span>
     <% end %>
-    <%= treeview_link 'Menu' do %>
+
+
+    <%= treeview_link 'Servicios' do %>
       <%= nav_link "#" do %>
-        <i class="fa fa-angle-double-right"></i>
-        <%= link_to 'Articulos', controller: 'articulos' %>
-        <%= link_to 'Ventas', controller: 'ventas' %>
-        <%= link_to 'Cotizaciones', controller: 'cotizacions' %>
-        <%= link_to 'Pedidos', controller: 'pedidos' %>
-        <%= link_to 'Clientes', controller: 'clientes' %>
+        
+       <li><a href="ventas"><i class="fa fa-circle-o"></i> Ventas </a></li>
+       <li><a href="cotizaciones"><i class="fa fa-circle-o"></i> Cotizaciones </a></li>
+       <li><a href="pedidos"><i class="fa fa-circle-o"></i> Pedidos </a></li>
+
       <% end %>
     <% end %>
-  </ul>
-</section>
-<section class="sidebar">
 
-<% else %>
-    <%= link_to 'Login', new_user_session_path %>
-<% end %>
+    <%= treeview_link 'Clientes' do %>
+      <%= nav_link "#" do %>
+          <li><a href="clientes"><i class="fa fa-circle-o"></i> Clientes</a></li>
+      <% end %>
+    <% end %>
+
+
+    <%= treeview_link 'Articulos' do %>
+      <%= nav_link "#" do %>
+       <li><a href="articulos"><i class="fa fa-circle-o"></i> Articulos</a></li>
+      <% end %>
+    <% end %>
+
+  </ul>
+
+
+
 
