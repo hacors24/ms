@@ -33,28 +33,32 @@
     <%= treeview_link 'Servicios' do %>
       <%= nav_link "#" do %>
         
-       <li><a href="ventas"><i class="fa fa-circle-o"></i> Ventas </a></li>
-       <li><a href="cotizaciones"><i class="fa fa-circle-o"></i> Cotizaciones </a></li>
-       <li><a href="pedidos"><i class="fa fa-circle-o"></i> Pedidos </a></li>
+        <%= nav_link ventas_url do %>
+          <i class="fa fa-circle-o"></i> Ventas
+      <% end %>
+      <%= nav_link cotizacions_url do %>
+          <i class="fa fa-circle-o"></i> Cotizaciones
+      <% end %>
+      <%= nav_link pedidos_url do %>
+          <i class="fa fa-circle-o"></i> Pedidos
+      <% end %>
 
       <% end %>
     <% end %>
 
-    <%= treeview_link 'Clientes' do %>
-      <%= nav_link "#" do %>
-          <li><a href="clientes"><i class="fa fa-circle-o"></i> Clientes</a></li>
+   
+      <%= nav_link clientes_url do %>
+          <i class="fa fa-angle-double-right"></i> Clientes
       <% end %>
-    <% end %>
+    
 
 
-    <%= treeview_link 'Articulos' do %>
-      <%= nav_link "#" do %>
-       <li><a href="articulos"><i class="fa fa-circle-o"></i> Articulos</a></li>
+     <%= nav_link articulos_url do %>
+          <i class="fa fa-angle-double-right"></i> Articulos
       <% end %>
-    <% end %>
 
   </ul>
-
+</section>
 
 
 
