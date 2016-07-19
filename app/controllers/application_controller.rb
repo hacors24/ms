@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
 layout :layout
 
+  
+
   private
   def layout
     if devise_controller?
@@ -13,5 +15,6 @@ layout :layout
       "application"
     end
   end
+  
   
 end
