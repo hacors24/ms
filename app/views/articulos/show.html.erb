@@ -1,33 +1,54 @@
-<div class="panel panel-primary"><h3><%= @articulo.nombre %></h3></div>
 
-<% if notice.nil?%>
-    <p id="notice"><%= notice %></p>
-<% else %>
-    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Mostrar <small>Articulo</small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%= link_to "articulos", articulos_path %></li>
+      <li class="active">Mostrar</li>
+    </ol>
+  </section>
 <% end %>
 
-<p>
-  <strong>Nombre: </strong>
-  <%= @articulo.nombre.to_s %>
-</p>
-<p>
-  <strong>Stock: </strong>
-  <%= @articulo.stock.to_s %>
-</p>
-<p>
-  <strong>Precio Compra: </strong>
-  <%= @articulo.precio_compra.to_s %>
-</p>
-<p>
-  <strong>Precio Venta: </strong>
-  <%= @articulo.precio_venta.to_s %>
-</p>
-<p>
-  <strong>Descripción: </strong>
-  <%= @articulo.descripcion.to_s %>
-</p>
-<p>
-  <strong>Imagen: </strong>
-  <%= image_tag @articulo.imagen2.url(:thumb)  %>
-</p>
-<%= link_to 'Atras', articulos_path %>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%= link_to edit_articulo_path(@articulo), :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Editar
+            <% end %>          
+          </div>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+            <dt>Nombre:</dt>
+            <dd><%= @articulo.nombre.to_s %></dd>
+
+            <dt>Stock: </dt>
+            <dd><%= @articulo.stock.to_s %></dd>
+
+            <dt>Precio Compra: </dt>
+            <dd><%= @articulo.precio_compra.to_s %></dd>
+
+            <dt>Precio Venta: </dt>
+            <dd><%= @articulo.precio_venta.to_s %></dd>
+
+            <dt>Descripción: </dt>
+            <dd><%= @articulo.descripcion.to_s %></dd>
+
+            <dt>Imagen: </dt>
+            <dd><%= image_tag @articulo.imagen2.url(:thumb)  %></dd>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Atras', articulos_path %>
+
+</section>
+

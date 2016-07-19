@@ -1,5 +1,15 @@
-<h1> Editar Articulo</h1>
-<%=  render 'form' %>
 
-<%=link_to 'Mostrar', @articulo %>
-<%= link_to 'Atras', articulos_path %>
+ <% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Edicion <small><%= link_to articulo_path,  @articulo %></small></h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "articulos", articulos_path %></li>
+        <li class="active">Editar</li>
+      </ol>
+    
+  </section>
+<% end %>
+
+<%= render 'form' %>

@@ -1,6 +1,13 @@
-<%=  form_for(@articulo) do |f| %>
-    <% if @articulo.errors.any? %>
-        <div id="error_explanation"> </div>
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(@articulo, :html => { :role => "form" }) do |f| %>
+        <% if @articulo.errors.any? %>
+        
+
+        <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
         <h2><%= pluralize(@articulo.errors.count, "error") %> Prohibido guardar este Articulo:</h2>
 
         <ul>
@@ -11,31 +18,34 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :nombre %>
-      <%= f.text_field :nombre %>
+      <%= f.text_field :nombre, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :stock %>
-      <%= f.text_field :stock %>
+      <%= f.text_field :stock, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :precio_venta %>
-      <%= f.text_field :precio_venta %>
+      <%= f.text_field :precio_venta, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :precio_compra %>
-      <%= f.text_field :precio_compra %>
+      <%= f.text_field :precio_compra, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :descripcion %>
-      <%= f.text_area :descripcion %>
+      <%= f.text_area :descripcion, :class => "form-control" %>
     </div>
-    <div class="field">
-    imagen: <%= f.file_field :imagen2%>
+    <div class="form-group">
+    imagen: <%= f.file_field :imagen2, :class => "form-control" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="form-group">
+      <%= f.submit :class => "btn btn-primary" %>
     </div>
 <% end %>
+ </div>
+  </div>
+</section>
