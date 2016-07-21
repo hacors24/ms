@@ -1,3 +1,4 @@
+
 <% content_for :content_header  do %>
   <section class="content-header">
     <h1>Nuevo <small>Articulo</small></h1>
@@ -7,9 +8,10 @@
       <li><%= link_to "articulos", articulos_path %></li>
       <li class="active">Nuevo</li>
     </ol>
+
   </section>
 <% end %>
-
 <%= render 'form' %>
-
-<%= link_to 'Atras', articulos_path %>
+<section class="content">
+<%= link_to 'Atras', articulos_path, :class => 'btn btn-success' %>
+</section>

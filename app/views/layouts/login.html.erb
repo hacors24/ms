@@ -5,7 +5,7 @@
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>AdminLTE::Dashboard</title>
+  <title>Inicio M&S</title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -16,19 +16,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="skin-blue">
+<body>
 
 <div class="container-narrow">
   <div class="masthead">
     <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to " Confecciones M&S", root_path %></h3>
+    <h3 class="muted"><%= link_to "Confecciones M&S", root_path %></h3>
   </div>
+</div>
   <hr/>
 
 <div class="border-form-div">
   <%= yield %>
 </div>
-</div>
+
 
 </body>
 </html>

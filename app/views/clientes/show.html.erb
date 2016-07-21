@@ -1,49 +1,69 @@
-<div class="panel panel-primary"><h3><%= @cliente.nombres %></h3></div>
 
-<% if notice.nil?%>
-    <p id="notice"><%= notice %></p>
-<% else %>
-    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Mostrar <small>Cliente</small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%= link_to "clientes", clientes_path %></li>
+      <li class="active">Mostrar</li>
+    </ol>
+  </section>
 <% end %>
 
-<p>
-  <strong>Nombres: </strong>
-  <%= @cliente.nombres.to_s %>
-</p>
-<p>
-  <strong>Apellidos: </strong>
-  <%= @cliente.apellidos.to_s %>
-</p>
-<p>
-  <strong>Fecha nacimiento: </strong>
-  <%= @cliente.fecha_nac.to_s %>
-</p>
-<p>
-  <strong>Razon social: </strong>
-  <%= @cliente.razon_social.to_s %>
-</p>
-<p>
-  <strong>Domicilio: </strong>
-  <%= @cliente.domicilio.to_s %>
-</p>
-<p>
-  <strong>Telefono Fijo: </strong>
-  <%= @cliente.telefono_fijo.to_s %>
-</p>
-<p>
-  <strong>Celular: </strong>
-  <%= @cliente.celular.to_s %>
-</p>
-<p>
-  <strong>Email: </strong>
-  <%= @cliente.email.to_s %>
-</p>
-<p>
-  <strong>Sitio Web: </strong>
-  <%= @cliente.sitio_web.to_s %>
-</p>
-<p>
-  <strong>Comentario: </strong>
-  <%= @cliente.comentario.to_s %>
-</p>
-<%= link_to 'Atras', clientes_path %>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%= link_to edit_cliente_path(@cliente), :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Editar
+            <% end %>          
+          </div>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+
+            <dt>Nombres:</dt>
+            <dd><%= @cliente.nombres.to_s  %></dd>
+
+            <dt>Apellidos: </dt>
+            <dd><%= @cliente.apellidos.to_s %></dd>
+
+            <dt>Fecha Nacimiento: </dt>
+            <dd><%= @cliente.fecha_nac.to_s %></dd>
+
+            <dt>Razon social: </dt>
+            <dd><%= @cliente.razon_social.to_s %></dd>
+
+            <dt>Domicilio: </dt>
+            <dd><%= @cliente.domicilio.to_s %></dd>            
+
+            <dt>Telefono fijo: </dt>
+            <dd><%= @cliente.telefono_fijo.to_s %></dd>
+
+            <dt>Celular: </dt>
+            <dd><%= @cliente.celular.to_s %></dd>
+
+            <dt>Email: </dt>
+            <dd><%= @cliente.email.to_s %></dd>
+
+            <dt>Sitio Web: </dt>
+            <dd><%= @cliente.sitio_web.to_s %></dd>
+
+            <dt>Comentario: </dt>
+            <dd><%= @cliente.comentario.to_s  %></dd>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <%= link_to 'Atras', clientes_path, :class => 'btn btn-success' %>
+
+</section>
+

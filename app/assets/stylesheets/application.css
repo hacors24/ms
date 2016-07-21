@@ -10,18 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_tree 
  *= require_self
  */
 body {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  
 }
 
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1250px;
 }
 
 .container-narrow > hr {
@@ -43,10 +42,13 @@ body {
 
 /* User sign in and sign forms. */
 .border-form-div {
-  max-width: 275px;
-  padding: 15px 38px 29px;
+  max-width: 290px;
+  padding: 15px 45px 40px;
   margin: 50 auto 20px;
   background-color: #f4f4f4;
+  background-image: url(https://image.freepik.com/vector-gratis/fondo-de-textura-de-lino-gris_1053-253.jpg);
+  background-repeat: repeat;
+  background-position: center center;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
