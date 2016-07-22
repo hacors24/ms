@@ -1,5 +1,17 @@
-<h1>Nueva Venta</h1>
 
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Nueva <small>Venta</small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%= link_to "ventas", ventas_path %></li>
+      <li class="active">Nuevo</li>
+    </ol>
+
+  </section>
+<% end %>
 <%= render 'form' %>
-
-<%= link_to 'Atras', ventas_path %>
+<section class="content">
+<%= link_to 'Atras', ventas_path, :class => 'btn btn-success' %>
+</section>

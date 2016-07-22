@@ -18,7 +18,7 @@
         </ul>
         </div>
     <% end %>
-
+<form class="form-inline">
     <div class="form-group">
       <%= f.label :nombres %>
       <%= f.text_field :nombres, :class => "form-control" %>
@@ -27,6 +27,7 @@
       <%= f.label :apellidos %>
       <%= f.text_field :apellidos, :class => "form-control" %>
     </div>
+</form>
     <div class="form-group">
       <%= f.label :fecha_nac %>
       <%= f.date_select :fecha_nac, :start_year => Time.now.year - 100, :end_year => Time.now.year - 18, :prompt => [], :class => "form-control"  %>

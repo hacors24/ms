@@ -6,7 +6,7 @@ class Articulo < ActiveRecord::Base
 
     validates :descripcion, length: { maximum: 500 }
     #validates :mayor_cero
-    validates :stock, :mayor_cero, numericality: { only_integer: true, :message => "Solo puede ingresar numeros"}
+    validates :stock, numericality: { only_integer: true, :message => "Solo puede ingresar numeros"}
     #falta que sea mayor a 0
  
     validates :precio_compra, numericality: { only_integer: true, message: "Solo puede ingresar numeros"}

@@ -41,7 +41,7 @@
             <dd><%= @articulo.descripcion.to_s %></dd>
 
             <dt>Imagen: </dt>
-            <dd><%= image_tag @articulo.imagen2.url(:thumb)  %></dd>
+            <dd><%= image_tag @articulo.imagen2.url(:thumb), height: '150', width: '175' %></dd>
 
           </dl>
         </div>

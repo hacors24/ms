@@ -2,9 +2,8 @@
   <% if user_signed_in? %>
     <li><%= link_to "Cerrar sesión", destroy_user_session_path, :method => :delete %></li>
   <% else %>
-    <li><%= link_to "Iniciar sesión", new_user_session_path %></li>
-    <li><%= link_to "Registrarte", new_user_registration_path %></li>
+    <li><button type="button" class="btn btn-default"><%= link_to "Iniciar sesión", new_user_session_path %></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+    <li><button type="button" class="btn btn-default"><%= link_to "Registrarte", new_user_registration_path %></button></li>
   <% end %>
 </ul>
-
-

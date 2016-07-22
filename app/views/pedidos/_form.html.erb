@@ -1,7 +1,16 @@
-<%=  form_for(@pedido) do |f| %>
-    <% if @pedido.errors.any? %>
-        <div id="error_explanation"> </div>
-        <h2><%= pluralize(@pedido.errors.count, "error") %> Prohibido guardar este pedido:</h2>
+
+
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(@pedido, :html => { :role => "form" }) do |f| %>
+        <% if @pedido.errors.any? %>
+        
+
+        <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+        <h2><%= pluralize(@pedido.errors.count, "error") %> Prohibido guardar este Articulo:</h2>
 
         <ul>
           <% @pedido.errors.full_messages.each do |message| %>
@@ -11,27 +20,31 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :cliente_id %>
       <%= f.select('cliente_id', Cliente.all.collect{|c| [c.nombres, c.id]}) %>
     </div>
-    <div class="field">
-      <%= f.label :fecha_pedido %>
-      <%= f.date_select :fecha_pedido %>
+    <div class="form-group">
+     <%= f.label :fecha_pedido %>
+      <%= f.date_select :fecha_pedido, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :fecha_entrega %>
-      <%= f.date_select :fecha_entrega %>
+      <%= f.date_select :fecha_entrega, :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :estado %>
-      <%= f.select :estado,[['Entregado', true], ['No entregado', false]] %>
+      <%= f.select :estado,[['Entregado', true], ['No entregado', false]], :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :descripcion %>
-      <%= f.text_area :descripcion %>
+      <%= f.text_area :descripcion, :class => "form-control" %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+
+    <div class="form-group">
+      <%= f.submit :class => "btn btn-primary" %>
     </div>
 <% end %>
+ </div>
+  </div>
+</section>

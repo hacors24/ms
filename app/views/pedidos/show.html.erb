@@ -1,41 +1,56 @@
-<% blanco = " " %>
-<div class="panel panel-primary"><h3><%= @pedido.cliente.nombres.to_s  %> <%= @pedido.cliente.apellidos.to_s  %></h3></div>
 
-<% if notice.nil?%>
-    <p id="notice"><%= notice %></p>
-<% else %>
-    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Mostrar <small>Pedido</small></h1>
+
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><%= link_to "pedidos", pedidos_path %></li>
+      <li class="active">Mostrar</li>
+    </ol>
+  </section>
 <% end %>
 
-<p>
-  <strong>Cliente: </strong>
-  <%= @pedido.cliente.nombres.to_s  %>  
-</p>
-<p>
-  <strong>Fecha_pedido: </strong>
-  <%= @pedido.fecha_pedido.to_s %>
-</p>
-<p>
-  <strong>Fecha_entrega: </strong>
-  <%= @pedido.fecha_entrega.to_s %>
-</p>
-<p>
-  <strong>Fecha_entrega: </strong>
-  <%= @pedido.fecha_entrega.to_s %>
-</p>
-<p>
-  <strong>Estado: </strong>
-  <%if @pedido.estado == true %>
-  Entregado
-      <%else%>
-  No Entregado
-      <%end%>
-</p>
-<p>
-  <strong>Descripcion: </strong>
-  <%= @pedido.descripcion.to_s %>
-</p>
-<%= link_to 'Atras', pedidos_path %>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%= link_to edit_pedido_path(@pedido), :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Editar
+            <% end %>          
+          </div>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+            <dt>Cliente:</dt>
+            <dd><%= @pedido.cliente.nombres.to_s %></dd>
 
+            <dt>Fecha pedido: </dt>
+            <dd><%= @pedido.fecha_pedido.to_s %></dd>
 
-    
+            <dt>Fecha entrega: </dt>
+            <dd><%= @pedido.fecha_entrega.to_s %></dd>
+
+            <dt>Estado: </dt>
+            <dd><%if @pedido.estado == true %>
+              Entregado
+             <%else%>
+             No Entregado
+             <%end%></dd>
+
+            <dt>Descripcion: </dt>
+            <dd><%= @pedido.descripcion.to_s %></dd>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Atras', pedidos_path, :class => 'btn btn-success'%>
+
+</section>
+

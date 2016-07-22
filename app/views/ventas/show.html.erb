@@ -1,26 +1,37 @@
-<div class="panel panel-primary"><h3><%= @venta.cliente_id %></h3></div>
 
-<% if notice.nil?%>
-    <p id="notice"><%= notice %></p>
-<% else %>
-    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
-<% end %>
 
-<p>
-  <strong>Cliente ID: </strong>
-  <%= @venta.cliente_id.to_s %>
-</p>
-<p>
-  <strong>Fecha Venta: </strong>
-  <%= @venta.fecha_venta.to_s %>
-</p>
-<p>
-  <strong>Precio Tipo Documento: </strong>
-  <%= @venta.tipo_documento.to_s %>
-</p>
-<p>
-  <strong>Descripción: </strong>
-  <%= @venta.descripcion.to_s %>
-</p>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <div class="box-tools pull-right">
+            <%= link_to edit_venta_path(@venta), :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              Editar 
+            <% end %>          
+          </div>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+            <dt>Cliente ID:</dt>
+            <dd><%= @venta.cliente_id.to_s %></dd>
 
-<%= link_to 'Atras', ventas_path %>
+            <dt>Fecha venta: </dt>
+            <dd><%= @venta.fecha_venta.to_s %></dd>
+
+            <dt>Tipo de Documento: </dt>
+            <dd><%= @venta.tipo_documento.to_s %></dd>
+
+            <dt>Descripción: </dt>
+            <dd><%= @venta.descripcion.to_s %></dd>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Atras', ventas_path, :class => 'btn btn-success'%>
+
+</section>
+

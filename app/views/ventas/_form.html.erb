@@ -1,7 +1,15 @@
-<%= form_for @venta, url: ventas_path, html: { method: :post } do |f| %>
-    <% if @venta.errors.any? %>
-        <div id="error_explanation"> </div>
-        <h2><%= pluralize(@venta.errors.count, "error") %> Prohibido guardar este venta:</h2>
+
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for @venta, url: ventas_path, html: { method: :post } do |f| %>
+        <% if @venta.errors.any? %>
+        
+
+        <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+        <h2><%= pluralize(@venta.errors.count, "error") %> Prohibido guardar esta Venta:</h2>
 
         <ul>
           <% @venta.errors.full_messages.each do |message| %>
@@ -10,23 +18,28 @@
         </ul>
         </div>
     <% end %>
-    <div class="field">
+
+    <div class="form-group">
       <%= f.label :cliente_id %>
       <%= f.select('cliente_id', Cliente.all.collect{|c| [c.nombres, c.id]}) %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :fecha_venta %>
-      <%= f.date_select :fecha_venta%>
+       <%= f.date_select :fecha_venta, :class => "form-control"%>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :tipo_documento %>
-      <%= f.text_field :tipo_documento %>
+      <%= f.text_field :tipo_documento , :class => "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :descripcion %>
-      <%= f.text_area :descripcion %>
+      <%= f.text_area :descripcion, :class => "form-control"  %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+
+    <div class="form-group">
+      <%= f.submit :class => "btn btn-primary" %>
     </div>
 <% end %>
+ </div>
+  </div>
+</section>

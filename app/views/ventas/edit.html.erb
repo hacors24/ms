@@ -1,5 +1,18 @@
-<h1> Editar Venta</h1>
-<%=  render 'form' %>
 
-<%=link_to 'Mostrar', :action => :index%>
-<%= link_to 'Atras', ventas_path %>
+<% content_for :content_header  do %>
+  <section class="content-header">
+    <h1>Edicion <small><%=  venta_path %></small></h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "ventas", ventas_path %></li>
+        <li class="active">Editar</li>
+      </ol>
+    
+  </section>
+<% end %>
+
+<%= render 'form' %>
+<section class="content">
+<%= link_to 'Atras', ventas_path, :class => 'btn btn-success' %>
+</section>
