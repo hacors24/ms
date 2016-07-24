@@ -1,6 +1,4 @@
 
-
-
 <section class="sidebar">
   <!-- Sidebar user panel -->
   <div class="user-panel">
@@ -25,36 +23,38 @@
   <!-- /.search form -->
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
-    <%= nav_link "#" do %>
-      <i class="fa fa-dashboard"></i> <span>Menu</span>
+    <%= nav_link "" do %>
+      <i class="glyphicon glyphicon-home"></i> <span>Menu</span>
     <% end %>
 
 
+    
+
+
     <%= treeview_link 'Servicios' do %>
-      <%= nav_link "#" do %>
         
         <%= nav_link ventas_url do %>
-          <i class="fa fa-circle-o"></i> Ventas
+          <i class="glyphicon glyphicon-check"></i> Ventas
       <% end %>
       <%= nav_link cotizacions_url do %>
-          <i class="fa fa-circle-o"></i> Cotizaciones
+          <i class="glyphicon glyphicon-check"></i> Cotizaciones
       <% end %>
       <%= nav_link pedidos_url do %>
-          <i class="fa fa-circle-o"></i> Pedidos
+          <i class="glyphicon glyphicon-check"></i> Pedidos
       <% end %>
 
-      <% end %>
+     
     <% end %>
 
    
       <%= nav_link clientes_url do %>
-          <i class="fa fa-angle-double-right"></i> Clientes
+          <i class="glyphicon glyphicon-user"></i> Clientes
       <% end %>
     
 
 
      <%= nav_link articulos_url do %>
-          <i class="fa fa-angle-double-right"></i> Articulos
+          <i class="glyphicon glyphicon-briefcase"></i> Articulos
       <% end %>
 
   </ul>

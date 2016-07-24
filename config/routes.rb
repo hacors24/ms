@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources 'detalle_pedidos' , :path => "detallepedidos"
   resources 'detalle_ventas' , :path => "detalleventas"
   resources 'inicio'
+  resources 'welcome'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

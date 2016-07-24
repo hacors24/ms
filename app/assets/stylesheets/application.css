@@ -43,8 +43,8 @@ body {
 
 /* User sign in and sign forms. */
 .border-form-div {
-  max-width: 290px;
-  padding: 15px 45px 40px;
+  max-width: 315px;
+  padding: 15px 35px 35px;
   margin: 50 auto 20px;
   background-color: #f4f4f4;
   background-image: url(https://image.freepik.com/vector-gratis/fondo-de-textura-de-lino-gris_1053-253.jpg);
@@ -94,5 +94,4 @@ body {
 	position:relative;
 	top:1px;
 }
-
 
