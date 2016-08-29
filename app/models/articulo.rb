@@ -5,18 +5,30 @@ class Articulo < ActiveRecord::Base
     message: "Solo puede ingresar letras" } 
 
     validates :descripcion, length: { maximum: 500 }
-    #validates :mayor_cero
+    validate :mayor_cero, on: :create
     validates :stock, numericality: { only_integer: true, :message => "Solo puede ingresar numeros"}
-    #falta que sea mayor a 0
- 
+  
     validates :precio_compra, numericality: { only_integer: true, message: "Solo puede ingresar numeros"}
     validates :precio_venta, numericality: { only_integer: true, message: "Solo puede ingresar numeros"}
-   
+    validate :validar_precio, on: :create
+
     def mayor_cero
     	if stock < 0
-    		errors.add(:stock, "Ingresa un stock positivo")
+    		errors.add(:stock, "Ingresa un valor positivo")
     	end
+        if precio_compra < 0
+            errors.add(:stock, "Ingrese un precio positivo")
+        end
+        if precio_venta < 0
+            errors.add(:stock, "Ingrese un precio positivo")
+        end
+
     end
 
+    def validar_precio
+        if precio_venta < precio_compra
+            errors.add(:precio_venta, "debe ser mayor que el de compra")
+        end
+    end
 
 end

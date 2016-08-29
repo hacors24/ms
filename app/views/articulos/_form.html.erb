@@ -23,24 +23,40 @@
       <%= f.label :nombre %>
       <%= f.text_field :nombre, :class => "form-control" %>
     </div>
+
+
     <div class="form-group">
       <%= f.label :stock %>
       <%= f.text_field :stock, :class => "form-control" %>
     </div>
+
+   <div class="form-group">
+      <%= f.label :precio_compra %>
+      <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <%= f.text_field :precio_compra, :class => "form-control" %>
+      <div class="input-group-addon">.00</div>
+    </div>
+    </div>
+
+
     <div class="form-group">
       <%= f.label :precio_venta %>
+     <div class="input-group">
+      <div class="input-group-addon">$</div>
       <%= f.text_field :precio_venta, :class => "form-control" %>
+      <div class="input-group-addon">.00</div>
     </div>
-    <div class="form-group">
-      <%= f.label :precio_compra %>
-      <%= f.text_field :precio_compra, :class => "form-control" %>
     </div>
+
+
     <div class="form-group">
       <%= f.label :descripcion %>
       <%= f.text_area :descripcion, :class => "form-control" %>
     </div>
     <div class="form-group">
-    imagen: <%= f.file_field :imagen2, :class => "form-control" %>
+    <%= f.label :imagen %>
+    <%= f.file_field :imagen2, :class => "form-control" %>
     </div>
 
     <div class="form-group">

@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  def email_required?
+      false
+  end
+
+  validates :username, presence: true, uniqueness: true,
+          length: {minimum: 4, too_short: "tiene que tener al menos 4 caracteres"},
+          format: {with: /\A[a-zA-Z0-9]+\z/, message: "sólo puede contener letras, números y guiones"}
+
   def self.find_or_create_by_omniauth(auth)
      user = User.where(provider: auth[:provider], uid: auth[:uid]).first
 

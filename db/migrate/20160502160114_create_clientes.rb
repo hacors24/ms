@@ -11,7 +11,7 @@ class CreateClientes < ActiveRecord::Migration
       t.string :email
       t.string :sitio_web
       t.text :comentario
-
+ 
       t.timestamps null: false
     end
   end
