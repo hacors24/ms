@@ -14,15 +14,14 @@ class Articulo < ActiveRecord::Base
 
     def mayor_cero
     	if stock < 0
-    		errors.add(:stock, "Ingresa un valor positivo")
+    		errors.add(:stock, "Ingrese un valor positivo")
     	end
         if precio_compra < 0
-            errors.add(:stock, "Ingrese un precio positivo")
+            errors.add(:precio_compra, "Ingrese un valor positivo")
         end
         if precio_venta < 0
-            errors.add(:stock, "Ingrese un precio positivo")
+            errors.add(:precio_venta, "Ingrese un valor positivo")
         end
-
     end
 
     def validar_precio
